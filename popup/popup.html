@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Everything Dark</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <!-- Clean solid crescent moon icon -->
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">Everything Dark</h1>
+          <span class="brand-sub">Universal Night Mode</span>
+        </div>
+      </div>
+
+      <!-- Master Power Switch -->
+      <label class="master-switch" title="Toggle dark mode on or off globally">
+        <input type="checkbox" id="master-toggle">
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <!-- Website Filter Mode Header & Tabs -->
+    <div class="filter-mode-container">
+      <div class="filter-mode-header">
+        <span class="filter-section-title">URL Filter Mode</span>
+        <span class="filter-mode-badge" id="filter-mode-badge">All Sites</span>
+      </div>
+      <div class="filter-mode-tabs">
+        <button class="filter-mode-tab active" id="btn-filter-all" data-filter="all" title="Convert all websites (except excluded)">
+          All Websites
+        </button>
+        <button class="filter-mode-tab" id="btn-filter-whitelist" data-filter="whitelist" title="Do NOT convert all websites. Only convert websites on your whitelist.">
+          Specific Sites Only
+        </button>
+      </div>
+      <div class="filter-mode-hint" id="filter-mode-hint">
+        🌐 Dark theme runs on <strong>all websites</strong> except excluded sites.
+      </div>
+    </div>
+
+    <!-- Current Site Card -->
+    <div class="site-card">
+      <div class="site-info">
+        <span class="site-dot" id="site-status-dot"></span>
+        <div class="site-details">
+          <span class="site-host" id="current-host">Loading site...</span>
+          <span class="site-state-label" id="site-state-label">Theme is Active</span>
+        </div>
+      </div>
+      <button class="site-toggle-btn" id="site-toggle-btn" title="Toggle for this website">
+        Exclude Site
+      </button>
+    </div>
+
+    <!-- Quick link to URL Filter Settings -->
+    <div class="filter-manage-bar">
+      <button class="filter-manage-link" id="btn-manage-filters" title="Open URL filter rules and whitelist management">
+        ⚙️ Manage URL Filters & Whitelist
+      </button>
+    </div>
+
+    <!-- Engine Mode Segmented Control -->
+    <div class="mode-section">
+      <div class="mode-tabs">
+        <button class="mode-tab active" data-mode="smart" id="tab-smart" title="Smart CSS recolor: natural dark mode">
+          Smart Recolor
+        </button>
+        <button class="mode-tab" data-mode="invert" id="tab-invert" title="Invert Filter: universal inversion with media protection">
+          Invert Filter
+        </button>
+      </div>
+    </div>
+
+    <!-- Revert Color & Image Handling Card -->
+    <div class="color-options-card">
+      <div class="feature-toggle-row">
+        <div class="feature-toggle-info">
+          <span class="feature-toggle-title">Revert Color (Invert)</span>
+          <span class="feature-toggle-desc">Invert page color polarity</span>
+        </div>
+        <label class="compact-switch" title="Toggle color inversion / revert">
+          <input type="checkbox" id="toggle-revert-color">
+          <span class="slider-sm"></span>
+        </label>
+      </div>
+
+      <div class="image-mode-section">
+        <div class="image-mode-header">
+          <span class="image-mode-title">Images</span>
+          <span class="image-mode-badge" id="image-mode-badge">Without Images</span>
+        </div>
+        <div class="image-mode-tabs">
+          <button class="image-tab active" id="btn-img-without" data-process-images="false" title="Media & photos protected in original natural colors (default)">
+            Without Images (Default)
+          </button>
+          <button class="image-tab" id="btn-img-with" data-process-images="true" title="Images are also inverted/processed">
+            With Images
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Fine Tuning Sliders Accordion -->
+    <details class="tuning-accordion" id="tuning-accordion">
+      <summary class="tuning-summary">
+        <span class="summary-title">Display Adjustments</span>
+        <span class="chevron">▾</span>
+      </summary>
+
+      <div class="tuning-content">
+        <!-- Brightness -->
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Brightness</span>
+            <span class="slider-val" id="val-brightness">100%</span>
+          </div>
+          <input type="range" id="range-brightness" min="60" max="140" value="100" class="custom-slider">
+        </div>
+
+        <!-- Contrast -->
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Contrast</span>
+            <span class="slider-val" id="val-contrast">100%</span>
+          </div>
+          <input type="range" id="range-contrast" min="60" max="140" value="100" class="custom-slider">
+        </div>
+
+        <!-- Sepia / Warmth -->
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Warmth / Sepia</span>
+            <span class="slider-val" id="val-sepia">0%</span>
+          </div>
+          <input type="range" id="range-sepia" min="0" max="100" value="0" class="custom-slider">
+        </div>
+
+        <!-- Grayscale -->
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Grayscale</span>
+            <span class="slider-val" id="val-grayscale">0%</span>
+          </div>
+          <input type="range" id="range-grayscale" min="0" max="100" value="0" class="custom-slider">
+        </div>
+
+        <!-- Dim Images -->
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Dim Glaring Images</span>
+            <span class="slider-val" id="val-dimImages">10%</span>
+          </div>
+          <input type="range" id="range-dimImages" min="0" max="50" value="10" class="custom-slider">
+        </div>
+
+        <button class="reset-btn" id="btn-reset-sliders">Reset Adjustments</button>
+      </div>
+    </details>
+
+    <!-- Schedule Automation -->
+    <div class="schedule-bar">
+      <span class="schedule-label">Schedule Mode</span>
+      <select id="select-schedule" class="schedule-select">
+        <option value="off">Always Active</option>
+        <option value="system">Sync with System Dark Mode</option>
+        <option value="time">Night Hours (8PM - 7AM)</option>
+      </select>
+    </div>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <div class="shortcut-tip">
+        <span>Shortcut:</span> <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>
+      </div>
+      <button class="options-link-btn" id="btn-open-options" title="Open full settings and URL filter rules">
+        Settings & Rules ↗
+      </button>
+    </footer>
+  </div>
+
+  <script src="../content/themes-config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

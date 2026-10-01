@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Everything Dark - Test & Demo Page</title>
+  <link rel="stylesheet" href="test-style.css">
+  <script src="../content/themes-config.js"></script>
+</head>
+<body>
+  <!-- Floating Live Theme Tester (for quick browser testing) -->
+  <aside class="floating-tester" id="floating-tester">
+    <div class="tester-header">
+      <span class="tester-title">🌙 Everything Dark</span>
+      <span class="tester-badge">Master Theme</span>
+    </div>
+    <div class="tester-row">
+      <label>Dark Theme Status:</label>
+      <select id="demo-theme-select">
+        <option value="none">Original Light Theme</option>
+        <option value="dark" selected>Everything Dark Theme</option>
+      </select>
+    </div>
+    <div class="tester-row">
+      <label>Engine Mode:</label>
+      <select id="demo-mode-select">
+        <option value="smart">Smart Recolor (Default)</option>
+        <option value="invert">Invert Filter (High-Compat)</option>
+      </select>
+    </div>
+    <div class="tester-row">
+      <label style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <input type="checkbox" id="demo-revert-color"> Revert Color (Invert)
+      </label>
+    </div>
+    <div class="tester-row">
+      <label>Images Mode:</label>
+      <select id="demo-img-mode">
+        <option value="without" selected>Without Images (Default)</option>
+        <option value="with">With Images</option>
+      </select>
+    </div>
+    <div class="tester-desc">
+      Tip: When the Chrome extension is enabled, it automatically converts pages using the master calibrated dark theme.
+    </div>
+  </aside>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <div class="logo">
+        <span class="logo-icon">🌙</span>
+        <span class="logo-text">Everything Dark Demo Suite</span>
+      </div>
+      <div class="nav-links">
+        <a href="#articles">Article</a>
+        <a href="#status-pills">Status Badges</a>
+        <a href="#gmail-chat">Gmail & Chat</a>
+        <a href="#forms">Forms</a>
+        <button class="nav-btn">Action</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container hero-content">
+      <span class="hero-tag">Intelligent Universal Dark Theme</span>
+      <h1 class="hero-title">High-Contrast Dark Theme with Semantic Color Preservation</h1>
+      <p class="hero-subtitle">
+        A single, meticulously calibrated dark theme that eliminates eye strain, preserves vibrant status tags (yellow, red, orange, green), and natively adapts complex web apps like Gmail and Google Chat.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary">Try Controls</button>
+        <button class="btn btn-outline">Explore Elements</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Grid -->
+  <main class="container main-content" id="articles">
+    <div class="content-layout">
+      <!-- Article Section -->
+      <section class="article-column">
+        <!-- Status Badges & Semantic Pills Verification -->
+        <article class="card" id="status-pills">
+          <span class="badge">Critical Color Preservation</span>
+          <h2 class="article-title">Semantic Status Badges & Pills</h2>
+          <p class="paragraph">
+            The engine detects intentional brand and status colors (saturation &ge; 18%) and protects them from being turned into monochrome gray. Notice how text contrast automatically adjusts: dark text on light yellow pills, and crisp white text on red/green/dark pills!
+          </p>
+
+          <!-- Status Pills Showcase -->
+          <div style="display: flex; flex-direction: column; gap: 12px; margin: 18px 0; padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+              <span style="font-weight: 600; font-size: 13px; color: #475569; min-width: 120px;">Task Pills:</span>
+              <span class="chip" style="background-color: #fde047; color: #713f12; font-weight: 700; border-radius: 9999px; padding: 6px 14px;">K&A Chat Bot</span>
+              <span class="chip" style="background-color: #fef08a; color: #854d0e; font-weight: 700; border-radius: 9999px; padding: 6px 14px;">CI/CD Automated</span>
+              <span class="chip" style="background-color: #ef4444; color: #ffffff; font-weight: 700; border-radius: 9999px; padding: 6px 14px;">Stat (Hindi)</span>
+              <span class="chip" style="background-color: #f97316; color: #ffffff; font-weight: 700; border-radius: 9999px; padding: 6px 14px;">Vikaram solar</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+              <span style="font-weight: 600; font-size: 13px; color: #475569; min-width: 120px;">Status Badges:</span>
+              <span class="chip" style="background-color: #16a34a; color: #ffffff; font-weight: 700; border-radius: 9999px; padding: 4px 12px;">Active / Online</span>
+              <span class="chip" style="background-color: #dc2626; color: #ffffff; font-weight: 700; border-radius: 9999px; padding: 4px 12px;">Offline / Inactive</span>
+              <span class="chip" style="background-color: #3b82f6; color: #ffffff; font-weight: 700; border-radius: 9999px; padding: 4px 12px;">In Progress</span>
+              <span class="chip" style="background-color: #8b5cf6; color: #ffffff; font-weight: 700; border-radius: 9999px; padding: 4px 12px;">Reviewing</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-weight: 600; font-size: 13px; color: #475569; min-width: 120px;">Active Sidebar Icon:</span>
+              <div style="width: 40px; height: 40px; border-radius: 8px; background: #eab308; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #000000; box-shadow: 0 2px 6px rgba(234, 179, 8, 0.4);">
+                ★
+              </div>
+              <span style="font-size: 13px; color: #64748b;">Must remain vibrant yellow indicator</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Gmail & Google Chat Mock Component -->
+        <article class="card" id="gmail-chat">
+          <span class="badge">Complex Web Apps</span>
+          <h2 class="article-title">Gmail & Google Chat Architecture</h2>
+          <p class="paragraph">
+            Gmail and Google Chat use deeply nested HTML structures, custom search inputs, and dynamic chat bubbles. Everything Dark features specialized site adaptors for seamless readability:
+          </p>
+
+          <!-- Gmail Mock -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; margin-bottom: 20px;">
+            <!-- Gmail Search Bar -->
+            <div style="background: #f1f3f4; padding: 10px 16px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #e2e8f0;">
+              <span style="font-size: 16px;">🔍</span>
+              <span style="font-size: 13px; color: #5f6368; flex: 1;">Search in mail: from:notifications@google.com</span>
+              <span style="font-size: 14px; background: #e8eaed; padding: 4px 8px; border-radius: 50%;">⚙️</span>
+            </div>
+            <!-- Gmail Email Rows -->
+            <div style="display: flex; flex-direction: column;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #f1f3f4; font-size: 13.5px;">
+                <input type="checkbox">
+                <span style="color: #f59e0b;">★</span>
+                <strong style="min-width: 140px; color: #202124;">Google Workspace</strong>
+                <span style="flex: 1; color: #3c4043; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Security alert: New sign-in detected on Mac OS</span>
+                <span class="chip" style="background: #e8f0fe; color: #1967d2; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Work</span>
+                <span style="font-size: 12px; color: #5f6368;">10:42 PM</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; font-size: 13.5px; background: #f8fafc;">
+                <input type="checkbox">
+                <span style="color: #9ca3af;">☆</span>
+                <strong style="min-width: 140px; color: #202124;">GitHub Team</strong>
+                <span style="flex: 1; color: #3c4043; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">[everything-dark] Pull Request #14 merged into main</span>
+                <span class="chip" style="background: #fce8e6; color: #c5221f; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Urgent</span>
+                <span style="font-size: 12px; color: #5f6368;">Yesterday</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Chat Mock -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: #3b82f6; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">
+                RD
+              </div>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+                  <strong style="font-size: 13.5px; color: #1f2937;">Ranjit Dey</strong>
+                  <span style="font-size: 11px; color: #9ca3af;">10:45 PM</span>
+                </div>
+                <div style="font-size: 13.5px; color: #374151; line-height: 1.5;">
+                  Hey <span style="background: #e0e7ff; color: #3730a3; padding: 2px 6px; border-radius: 4px; font-weight: 600;">@team</span>, the new Everything Dark build is deployed. Check out this code snippet:
+                </div>
+                <pre class="code-block" style="margin-top: 8px;"><code>const theme = ED_DARK_THEME;
+console.log('Master dark theme active:', theme.bg);</code></pre>
+                <div style="display: flex; gap: 8px; margin-top: 8px;">
+                  <span style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 2px 8px; border-radius: 12px; font-size: 12px; cursor: pointer;">👍 4</span>
+                  <span style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 2px 8px; border-radius: 12px; font-size: 12px; cursor: pointer;">🚀 2</span>
+                  <span style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 2px 8px; border-radius: 12px; font-size: 12px; cursor: pointer;">❤️ 1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Media & Image Protection -->
+        <article class="card">
+          <h3 class="section-heading">Media & Image Protection</h3>
+          <p class="paragraph">Images, photographs, and vector artwork must never be inverted into photo negatives:</p>
+          <div class="media-grid">
+            <div class="media-box">
+              <svg width="100%" height="160" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="scenery" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b82f6" />
+                    <stop offset="50%" stop-color="#ec4899" />
+                    <stop offset="100%" stop-color="#f59e0b" />
+                  </linearGradient>
+                </defs>
+                <rect width="300" height="160" rx="8" fill="url(#scenery)" />
+                <circle cx="150" cy="80" r="40" fill="#ffffff" opacity="0.9" />
+                <path d="M50 140 Q 150 70 250 140 Z" fill="#1e293b" opacity="0.8" />
+                <text x="150" y="85" text-anchor="middle" fill="#1e1b4b" font-weight="bold" font-size="14">Protected Vector Artwork</text>
+              </svg>
+              <span class="caption">Vector Art (Preserves true colors)</span>
+            </div>
+
+            <div class="media-box">
+              <div class="avatar-card">
+                <div class="avatar-circle">
+                  <span>RD</span>
+                </div>
+                <div>
+                  <strong>Ranjit Dey</strong>
+                  <span class="author-sub">Lead Engineer</span>
+                </div>
+              </div>
+              <span class="caption">User Avatar (Untouched)</span>
+            </div>
+        <!-- Universal Modals, Popovers & Dialogs Test -->
+        <article class="card" id="modals-popovers">
+          <span class="badge">Elevated Surfaces</span>
+          <h2 class="article-title">Modals, Popovers, Tooltips & HTML5 Elements</h2>
+          <p class="paragraph">
+            Modals, popovers, and elevated overlays receive deep elevated dark backgrounds, solid borders, and dark backdrop filters with zero transparent bleeds:
+          </p>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0;">
+            <button type="button" class="btn btn-primary" id="btn-open-modal">Open Native Modal Dialog</button>
+            <button type="button" class="btn btn-outline" id="btn-toggle-dropdown" style="position: relative;">
+              Menu Dropdown ▾
+              <div id="demo-dropdown-menu" style="display: none; position: absolute; top: 110%; left: 0; min-width: 180px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 100; text-align: left; padding: 6px 0;">
+                <div style="padding: 8px 14px; cursor: pointer;" class="demo-menu-item" role="menuitem">Profile Settings</div>
+                <div style="padding: 8px 14px; cursor: pointer;" class="demo-menu-item" role="menuitem">URL Filter Rules</div>
+                <div style="padding: 8px 14px; cursor: pointer;" class="demo-menu-item" role="menuitem">Display Controls</div>
+                <div style="border-top: 1px solid #e2e8f0; margin: 4px 0;"></div>
+                <div style="padding: 8px 14px; cursor: pointer; color: #ef4444;" class="demo-menu-item" role="menuitem">Log Out</div>
+              </div>
+            </button>
+            <span style="position: relative; display: inline-flex; align-items: center;">
+              <button type="button" class="btn btn-outline" id="btn-tooltip-trigger">Hover for Tooltip</button>
+              <div id="demo-tooltip" role="tooltip" style="display: none; position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%); padding: 5px 10px; border-radius: 4px; font-size: 11px; white-space: nowrap; pointer-events: none;">
+                Universal High-Contrast Tooltip
+              </div>
+            </span>
+          </div>
+
+          <!-- HTML5 Details & Summary Accordion -->
+          <details style="border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px 16px; margin: 16px 0;">
+            <summary style="font-weight: 600; cursor: pointer;">Click to expand HTML5 details/summary</summary>
+            <div style="margin-top: 10px; font-size: 13.5px; line-height: 1.6;">
+              <p>Everything Dark natively manages all HTML elements, including inline text semantics:</p>
+              <ul style="margin-left: 20px; margin-top: 8px;">
+                <li>Keyboard shortcuts: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd> to toggle.</li>
+                <li>Highlighted text: <mark>Smart Dark Theme</mark> preserved in readable warm amber.</li>
+                <li>Strikethrough / Revisions: <del>Obsolete light mode</del> replaced with <ins>High-visibility dark theme</ins>.</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Interactive Data Table with Row Hovers -->
+          <h3 class="section-heading" style="margin-top: 20px;">Data Table with Interactive Row Hovers</h3>
+          <div style="overflow-x: auto; margin-top: 10px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+              <thead>
+                <tr style="border-bottom: 2px solid #e2e8f0; text-align: left;">
+                  <th style="padding: 10px 12px;">User</th>
+                  <th style="padding: 10px 12px;">Domain</th>
+                  <th style="padding: 10px 12px;">Status</th>
+                  <th style="padding: 10px 12px;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 10px 12px; font-weight: 600;">Alex Morgan</td>
+                  <td style="padding: 10px 12px;">management.kalolwala.com</td>
+                  <td style="padding: 10px 12px;"><span class="chip" style="background-color: #16a34a; color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 11px;">Active</span></td>
+                  <td style="padding: 10px 12px;"><button type="button" class="btn btn-outline" style="padding: 3px 8px; font-size: 11px;">View</button></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 10px 12px; font-weight: 600;">Sarah Chen</td>
+                  <td style="padding: 10px 12px;">mail.google.com</td>
+                  <td style="padding: 10px 12px;"><span class="chip" style="background-color: #fde047; color: #713f12; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700;">Pending</span></td>
+                  <td style="padding: 10px 12px;"><button type="button" class="btn btn-outline" style="padding: 3px 8px; font-size: 11px;">View</button></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 10px 12px; font-weight: 600;">David Kumar</td>
+                  <td style="padding: 10px 12px;">chat.google.com</td>
+                  <td style="padding: 10px 12px;"><span class="chip" style="background-color: #dc2626; color: #ffffff; padding: 3px 10px; border-radius: 12px; font-size: 11px;">Offline</span></td>
+                  <td style="padding: 10px 12px;"><button type="button" class="btn btn-outline" style="padding: 3px 8px; font-size: 11px;">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <!-- Sidebar Column -->
+      <aside class="sidebar-column">
+        <!-- Interactive Form Controls Test -->
+        <div class="card" id="forms">
+          <h3 class="section-heading">Interactive Form Controls</h3>
+          <form class="test-form" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label for="f-name">Full Name</label>
+              <input type="text" id="f-name" placeholder="Johnathan Doe" value="Ranjit Dey">
+            </div>
+
+            <div class="form-group">
+              <label for="f-email">Email Address</label>
+              <input type="email" id="f-email" placeholder="you@domain.com" value="user@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="f-theme-pref">Preferred Contrast Level</label>
+              <select id="f-theme-pref">
+                <option>Standard Balanced Contrast (100%)</option>
+                <option>High Contrast (120%)</option>
+                <option>Soothing Eye Care (Sepia)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="f-search">Search Input (Hover & Focus)</label>
+              <input type="search" id="f-search" placeholder="Search keywords...">
+            </div>
+
+            <div class="form-group">
+              <label for="f-editable">Rich Contenteditable Field</label>
+              <div id="f-editable" contenteditable="true" style="padding: 8px 12px; min-height: 48px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                Rich editable text area. Try typing here!
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="f-disabled">Disabled Input State</label>
+              <input type="text" id="f-disabled" value="Read-only protected system value" disabled>
+            </div>
+
+            <div class="form-group">
+              <label for="f-notes">Feedback / Notes</label>
+              <textarea id="f-notes" rows="3">Everything Dark converts light websites effortlessly!</textarea>
+            </div>
+
+            <div class="checkbox-group">
+              <label><input type="checkbox" checked> Whitelist mode enabled</label>
+              <label><input type="checkbox"> Auto schedule with system night mode</label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-block">Save Preferences</button>
+              <button type="reset" class="btn btn-outline btn-block">Reset Form</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Single Dark Theme Specifications -->
+        <div class="card">
+          <h3 class="section-heading">Master Theme Tokens</h3>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12.5px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span>Base Background:</span>
+              <code>#121316</code>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span>Elevated Panels:</span>
+              <code>#1a1c20</code>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span>Surface / Hovers:</span>
+              <code>#22252b</code>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span>High Contrast Text:</span>
+              <code>#f3f4f6</code>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span>Semantic Border:</span>
+              <code>#2e323b</code>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span>Brand Royal Accent:</span>
+              <code>#3b82f6</code>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Native HTML5 Dialog Modal -->
+  <dialog id="demo-dialog" style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; max-width: 440px; width: 90%; background: #ffffff; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 style="margin: 0; font-size: 18px;">Elevated Modal Dialog</h3>
+      <button type="button" id="btn-close-modal" style="background: transparent; border: none; font-size: 20px; cursor: pointer; color: inherit;">×</button>
+    </div>
+    <p style="margin-bottom: 16px; font-size: 13.5px; line-height: 1.5;">
+      This native HTML5 dialog with <code>::backdrop</code> is seamlessly rendered with dark elevated surface, 1px border, and dark backdrop filter.
+    </p>
+    <div style="margin-bottom: 16px;">
+      <label style="display: block; font-size: 12px; margin-bottom: 6px;">Confirmation Input</label>
+      <input type="text" placeholder="Type here to test focus ring inside modal..." style="width: 100%; padding: 8px 12px;">
+    </div>
+    <div style="display: flex; justify-content: flex-end; gap: 10px;">
+      <button type="button" class="btn btn-outline" id="btn-cancel-modal">Cancel</button>
+      <button type="button" class="btn btn-primary" id="btn-confirm-modal">Confirm</button>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Everything Dark Extension Test Suite. Pure HTML5 & CSS3.</p>
+    </div>
+  </footer>
+
+  <!-- Script for interactive controls & in-page simulator demo -->
+  <script>
+    // Interactive Modal Dialog
+    const modal = document.getElementById('demo-dialog');
+    const btnOpenModal = document.getElementById('btn-open-modal');
+    const btnCloseModal = document.getElementById('btn-close-modal');
+    const btnCancelModal = document.getElementById('btn-cancel-modal');
+    const btnConfirmModal = document.getElementById('btn-confirm-modal');
+    if (btnOpenModal && modal) {
+      btnOpenModal.addEventListener('click', () => modal.showModal());
+      if (btnCloseModal) btnCloseModal.addEventListener('click', () => modal.close());
+      if (btnCancelModal) btnCancelModal.addEventListener('click', () => modal.close());
+      if (btnConfirmModal) btnConfirmModal.addEventListener('click', () => modal.close());
+    }
+
+    // Interactive Dropdown Menu
+    const btnDropdown = document.getElementById('btn-toggle-dropdown');
+    const menuDropdown = document.getElementById('demo-dropdown-menu');
+    if (btnDropdown && menuDropdown) {
+      btnDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuDropdown.style.display = menuDropdown.style.display === 'block' ? 'none' : 'block';
+      });
+      document.addEventListener('click', () => {
+        menuDropdown.style.display = 'none';
+      });
+    }
+
+    // Interactive Tooltip
+    const tooltipTrigger = document.getElementById('btn-tooltip-trigger');
+    const tooltip = document.getElementById('demo-tooltip');
+    if (tooltipTrigger && tooltip) {
+      tooltipTrigger.addEventListener('mouseenter', () => tooltip.style.display = 'block');
+      tooltipTrigger.addEventListener('mouseleave', () => tooltip.style.display = 'none');
+    }
+
+    // Simulator Theme Controls
+    const themeSelect = document.getElementById('demo-theme-select');
+    const modeSelect = document.getElementById('demo-mode-select');
+    const revertColorCheck = document.getElementById('demo-revert-color');
+    const imgModeSelect = document.getElementById('demo-img-mode');
+    let injectedStyle = null;
+
+    function applyInPageDemo() {
+      const isDark = themeSelect.value === 'dark';
+      let mode = modeSelect.value;
+      const isRevert = revertColorCheck && revertColorCheck.checked;
+      const imgMode = imgModeSelect ? imgModeSelect.value : 'without';
+
+      if (isRevert) {
+        mode = 'invert';
+      }
+
+      if (!isDark) {
+        if (injectedStyle) injectedStyle.remove();
+        return;
+      }
+
+      const theme = (typeof ED_DARK_THEME !== 'undefined' ? ED_DARK_THEME : (window.ED_DARK_THEME || {
+        bg: '#121316',
+        bgElevated: '#1a1c20',
+        bgSurface: '#22252b',
+        text: '#f3f4f6',
+        textMuted: '#9ca3af',
+        border: '#2e323b',
+        accent: '#3b82f6',
+        link: '#60a5fa',
+        codeBg: '#181a1f'
+      }));
+
+      if (!injectedStyle) {
+        injectedStyle = document.createElement('style');
+        injectedStyle.id = 'demo-injected-style';
+        document.head.appendChild(injectedStyle);
+      }
+
+      if (mode === 'invert') {
+        const imgCounterInvert = imgMode === 'without'
+          ? `img, video, canvas, svg, .floating-tester { filter: invert(100%) hue-rotate(180deg) !important; }`
+          : `.floating-tester { filter: invert(100%) hue-rotate(180deg) !important; }`;
+
+        injectedStyle.textContent = `
+          html {
+            filter: invert(90%) hue-rotate(180deg) !important;
+            background-color: #121316 !important;
+          }
+          ${imgCounterInvert}
+        `;
+      } else {
+        const imgStyle = imgMode === 'with'
+          ? `img:not([class*="avatar"]), svg:not(.brand-icon svg) { filter: invert(90%) hue-rotate(180deg) !important; }`
+          : `img, video, canvas, svg { filter: none !important; }`;
+
+        injectedStyle.textContent = `
+          :root {
+            --demo-bg: ${theme.bg};
+            --demo-elevated: ${theme.bgElevated};
+            --demo-surface: ${theme.bgSurface};
+            --demo-surface-hover: #292d36;
+            --demo-text: ${theme.text};
+            --demo-muted: ${theme.textMuted};
+            --demo-border: ${theme.border};
+            --demo-accent: ${theme.accent};
+            --demo-link: ${theme.link};
+          }
+          html, body {
+            background-color: var(--demo-bg) !important;
+            color: var(--demo-text) !important;
+          }
+          .navbar, .footer, .card, .quote, dialog, #demo-dropdown-menu {
+            background-color: var(--demo-elevated) !important;
+            border-color: var(--demo-border) !important;
+            color: var(--demo-text) !important;
+          }
+          dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.75) !important;
+            backdrop-filter: blur(4px) !important;
+          }
+          #demo-tooltip {
+            background-color: #141519 !important;
+            color: #ffffff !important;
+            border: 1px solid var(--demo-border) !important;
+          }
+          .demo-menu-item:hover {
+            background-color: var(--demo-surface-hover) !important;
+            color: #ffffff !important;
+          }
+          tr:hover, tr:hover > td {
+            background-color: var(--demo-surface-hover) !important;
+          }
+          .hero {
+            background: linear-gradient(180deg, var(--demo-elevated), var(--demo-bg)) !important;
+            border-bottom: 1px solid var(--demo-border) !important;
+          }
+          .hero-title, .article-title, .section-heading, strong, th {
+            color: var(--demo-text) !important;
+          }
+          .paragraph, .meta, .caption, .author-sub, td, label {
+            color: var(--demo-muted) !important;
+          }
+          a, .preview-link {
+            color: var(--demo-link) !important;
+          }
+          input, select, textarea, [contenteditable="true"] {
+            background-color: #16181d !important;
+            color: var(--demo-text) !important;
+            border-color: var(--demo-border) !important;
+          }
+          input:hover, textarea:hover, select:hover, [contenteditable="true"]:hover {
+            border-color: #4b5563 !important;
+          }
+          input:focus, textarea:focus, select:focus, [contenteditable="true"]:focus {
+            border-color: var(--demo-accent) !important;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+          }
+          .btn-primary {
+            background-color: var(--demo-accent) !important;
+            border-color: var(--demo-accent) !important;
+          }
+          .btn-primary:hover {
+            background-color: #2563eb !important;
+          }
+          .btn-outline {
+            background-color: var(--demo-surface) !important;
+            border-color: var(--demo-border) !important;
+            color: var(--demo-text) !important;
+          }
+          .btn-outline:hover {
+            background-color: var(--demo-surface-hover) !important;
+            border-color: #4b5563 !important;
+            color: #ffffff !important;
+          }
+          .code-block {
+            background-color: ${theme.codeBg || '#181a1f'} !important;
+            border-color: var(--demo-border) !important;
+            color: var(--demo-text) !important;
+          }
+          ${imgStyle}
+        `;
+      }
+    }
+
+    themeSelect.addEventListener('change', applyInPageDemo);
+    modeSelect.addEventListener('change', applyInPageDemo);
+    if (revertColorCheck) revertColorCheck.addEventListener('change', applyInPageDemo);
+    if (imgModeSelect) imgModeSelect.addEventListener('change', applyInPageDemo);
+
+    // Initial run
+    applyInPageDemo();
+  </script>
+</body>
+</html>
